@@ -34,6 +34,8 @@ public class HomepageController {
     public ListView<String> ArtifactsList;
     @FXML
     public Button btnLogOut;
+    @FXML
+    public Button btnDelArti;
 
     @FXML
     public void initialize() throws SQLException {
@@ -135,5 +137,49 @@ public class HomepageController {
         Scene s = new Scene(p);
         stage.setScene(s);
         stage.show();
+    }
+
+    @FXML
+    public void deleteArtifact(ActionEvent event){
+        int selectedIndex = ArtifactsList.getSelectionModel().getSelectedIndex();
+        ObservableList<String> items = FXCollections.observableArrayList();
+        String selectedItem = items.get(selectedIndex);
+        if(selectedIndex != -1){
+            try(Connection c = MySQLConnection.getConnection();
+                PreparedStatement statement = c.prepareStatement(
+                        "DELETE FROM tblartifact WHERE artifactid=?"
+                )){
+                HelloController hc = new HelloController();
+                String[] parts = selectedItem.split(" , ");
+
+                txtArtiName.setText(parts[1]);
+                txtArtiType.setText(parts[2]);
+                txtArtiOrigin.setText(parts[3]);
+
+                statement.setInt(1, Integer.parseInt(parts[0]));
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Delete Artifact");
+                alert.setHeaderText("Are you sure you want to delete this artifact?");
+                ButtonType yes = new ButtonType("Yes");
+                ButtonType no = new ButtonType("No");
+                alert.getButtonTypes().setAll(yes, no);
+                Optional<ButtonType> result = alert.showAndWait();
+
+                if (result.get() == yes) {
+                    int rowsDeleted = statement.executeUpdate();
+                    System.out.println("Rows deleted: " + rowsDeleted);
+                    Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+                    Parent p = FXMLLoader.load(getClass().getResource("homepage-view.fxml"));
+                    Scene s = new Scene(p);
+                    stage.setScene(s);
+                    stage.show();
+                    initialize();
+                } else {
+                    alert.close();
+                }
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
     }
 }
