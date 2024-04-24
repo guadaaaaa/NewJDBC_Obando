@@ -6,7 +6,7 @@
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jdbc.HelloController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jdbc.RegisterController">
     <children>
         <ImageView fitHeight="416.0" fitWidth="200.0" layoutX="-18.0" layoutY="-9.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -41,43 +41,44 @@
                     <stops>
                         <Stop>
                             <color>
-                                <Color red="0.28421053290367126" green="0.1926315724849701" blue="0.1926315724849701" />
+                                <Color red="0.2823529541492462" green="0.1921568661928177" blue="0.1921568661928177" />
                             </color>
                         </Stop>
                         <Stop offset="1.0">
                             <color>
-                                <Color red="0.8199999928474426" green="0.7430896759033203" blue="0.5411999821662903" />
+                                <Color red="0.8196078538894653" green="0.7411764860153198" blue="0.5411764979362488" />
                             </color>
                         </Stop>
                     </stops>
                 </LinearGradient>
             </textFill>
         </Label>
-        <TextField id="txtUsername" fx:id="txtUsername" layoutX="279.0" layoutY="173.0" prefHeight="26.0" prefWidth="221.0" />
-        <PasswordField id="txtPassword" fx:id="txtPassword" layoutX="279.0" layoutY="232.0" prefHeight="26.0" prefWidth="222.0" />
-        <Label layoutX="346.0" layoutY="143.0" text="Username" textAlignment="CENTER" textFill="#512e2e">
+        <TextField id="txtUsername" fx:id="txtUsername" layoutX="279.0" layoutY="228.0" prefHeight="26.0" prefWidth="221.0" />
+        <PasswordField id="txtPassword" fx:id="txtPassword" layoutX="278.0" layoutY="293.0" prefHeight="26.0" prefWidth="222.0" />
+        <Label layoutX="346.0" layoutY="199.0" text="Username" textAlignment="CENTER" textFill="#512e2e">
             <font>
                 <Font name="Lucida Sans Unicode" size="18.0" />
             </font>
         </Label>
-        <Label layoutX="348.0" layoutY="202.0" text="Password" textFill="#512e2e">
+        <Label layoutX="348.0" layoutY="263.0" text="Password" textFill="#512e2e">
             <font>
                 <Font name="Lucida Sans Unicode" size="18.0" />
             </font>
         </Label>
-        <Button id="btnLogIn" fx:id="btnLogIn" onAction="#LogIn" layoutX="302.0" layoutY="271.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="82.0" text="Log In" textFill="#512e2e">
+        <Button id="btnRegister" fx:id="btnRegister" layoutX="348.0" layoutY="332.0" mnemonicParsing="false" onAction="#Register" prefHeight="30.0" prefWidth="82.0" text="Register" textFill="#512e2e">
             <font>
                 <Font name="Lucida Sans Unicode" size="15.0" />
             </font>
         </Button>
-        <Button id="btnRegister" fx:id="btnRegister" onAction="#Register" layoutX="395.0" layoutY="271.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="82.0" text="Register" textFill="#512e2e">
+        <Label fx:id="txtError" layoutX="376.0" layoutY="328.0" textFill="RED">
             <font>
-                <Font name="Lucida Sans Unicode" size="15.0" />
+                <Font name="Lucida Sans Unicode" size="13.0" />
             </font>
-        </Button>
-      <Label fx:id="txtError" layoutX="376.0" layoutY="328.0" textFill="RED">
+        </Label>
+      <TextField fx:id="txtName" layoutX="279.0" layoutY="164.0" prefHeight="26.0" prefWidth="222.0" />
+      <Label layoutX="364.0" layoutY="134.0" text="Name" textFill="#512e2e">
          <font>
-            <Font name="Lucida Sans Unicode" size="13.0" />
+            <Font name="Lucida Sans Unicode" size="18.0" />
          </font>
       </Label>
     </children>

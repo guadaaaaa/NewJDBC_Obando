@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.jdbc.HomepageController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../images/bgartifacts.png" />
+         </image></ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="345.0" layoutX="29.0" layoutY="30.0" stroke="BLACK" strokeType="INSIDE" width="544.0" />
+      <Label fx:id="txtWelcome" layoutX="47.0" layoutY="52.0">
+         <font>
+            <Font name="Eras Bold ITC" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2823529541492462" green="0.1921568661928177" blue="0.1921568661928177" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.8196078538894653" green="0.7411764860153198" blue="0.5411764979362488" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="51.0" layoutY="124.0" text="Discovered Something NEW?" textFill="#483131">
+         <font>
+            <Font name="Lucida Sans Unicode" size="17.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtArtiName" layoutX="88.0" layoutY="177.0" />
+      <TextField fx:id="txtArtiType" layoutX="89.0" layoutY="237.0" />
+      <TextField fx:id="txtArtiOrigin" layoutX="89.0" layoutY="299.0" />
+      <Label layoutX="117.0" layoutY="154.0" text="Artifact Name">
+         <font>
+            <Font name="Lucida Sans Unicode" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnUpdate" layoutX="35.0" layoutY="94.0" mnemonicParsing="false" onAction="#UpdateAccount" text="Update Account">
+         <font>
+            <Font name="Lucida Sans Unicode" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDelete" layoutX="146.0" layoutY="94.0" mnemonicParsing="false" onAction="#DeleteAccount" text="Delete Account">
+         <font>
+            <Font name="Lucida Sans Unicode" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="120.0" layoutY="214.0" text="Artifact Type">
+         <font>
+            <Font name="Lucida Sans Unicode" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="115.0" layoutY="276.0" text="Artifact Origin">
+         <font>
+            <Font name="Lucida Sans Unicode" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnSave" layoutX="115.0" layoutY="332.0" mnemonicParsing="false" onAction="#SaveArtifact" text="Save Artifact">
+         <font>
+            <Font name="Lucida Sans Unicode" size="13.0" />
+         </font>
+      </Button>
+      <ListView fx:id="ArtifactsList" layoutX="317.0" layoutY="30.0" prefHeight="345.0" prefWidth="255.0" />
+      <Button fx:id="btnLogOut" onAction="#LogOut" layoutX="253.0" layoutY="94.0" mnemonicParsing="false" text="Log Out">
+         <font>
+            <Font name="Lucida Sans Unicode" size="12.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
