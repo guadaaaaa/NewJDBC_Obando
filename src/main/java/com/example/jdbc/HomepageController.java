@@ -44,6 +44,7 @@ public class HomepageController {
 
         try(Connection c = MySQLConnection.getConnection();
             PreparedStatement stmt = c.prepareStatement("SELECT * FROM tblartifact WHERE acctid = ?")){
+            c.setAutoCommit(false);
             int userid = hc.CurrentID;
             stmt.setInt(1, userid);
             ResultSet rs = stmt.executeQuery();
@@ -53,6 +54,7 @@ public class HomepageController {
                 items.add(item);
             }
             ArtifactsList.setItems(items);
+            c.commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -65,6 +67,7 @@ public class HomepageController {
             PreparedStatement statement = c.prepareStatement(
                     "INSERT INTO tblartifact (acctid,artifact_name,artifact_type,artifact_origin) VALUES (?,?,?,?)"
             )){
+            c.setAutoCommit(false);
             statement.setInt(1, hc.CurrentID);
             statement.setString(2,name);
             statement.setString(3,type);
@@ -72,6 +75,7 @@ public class HomepageController {
             int rowsInserted = statement.executeUpdate();
             System.out.println("Rows inserted: "+rowsInserted);
             initialize();
+            c.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -94,6 +98,7 @@ public class HomepageController {
             PreparedStatement statement = c.prepareStatement(
                     "DELETE FROM tblusers WHERE id=?"
             )){
+            c.setAutoCommit(false);
             HelloController hc = new HelloController();
             int id = hc.CurrentID;
             statement.setInt(1,id);
@@ -113,6 +118,7 @@ public class HomepageController {
                 Scene s = new Scene(p);
                 stage.setScene(s);
                 stage.show();
+                c.commit();
             } else {
                 alert.close();
             }
