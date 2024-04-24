@@ -33,19 +33,20 @@ public class HelloController {
     public boolean ReadData(String name, String password){
         try(Connection c = MySQLConnection.getConnection();
             Statement statement = c.createStatement()) {
+            c.setAutoCommit(false);
             String query = "SELECT * FROM tblusers";
             ResultSet res = statement.executeQuery(query);
             while (res.next()){
                 String currName = res.getString("username");
                 String currPass = res.getString("password");
                 int id = res.getInt("id");
-                System.out.println("ID: " + id + "\nName:" + currName + "\nPassword: " + currPass);
                 if(name.equals(currName) && password.equals(currPass)){
                     CurrentName = currName;
                     CurrentID = id;
                     return true;
                 }
             }
+            c.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }

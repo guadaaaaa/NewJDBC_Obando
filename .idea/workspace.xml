@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30707769-ffd5-4e71-a6c0-4018a377a19e" name="Changes" comment="JDBC Submission">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/HomepageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/HomepageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/jdbc/homepage-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/jdbc/homepage-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/jdbc/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/jdbc/RegisterController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713960107088</updated>
       <workItem from="1713960108140" duration="5397000" />
-      <workItem from="1713965750717" duration="8375000" />
+      <workItem from="1713965750717" duration="8686000" />
     </task>
     <task id="LOCAL-00001" summary="JDBC Submission">
       <option name="closed" value="true" />
@@ -120,7 +119,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713973211551</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="JDBC Submission">
+      <option name="closed" value="true" />
+      <created>1713974160511</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713974160511</updated>
+    </task>
+    <task id="LOCAL-00004" summary="JDBC Submission">
+      <option name="closed" value="true" />
+      <created>1713974387839</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713974387839</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

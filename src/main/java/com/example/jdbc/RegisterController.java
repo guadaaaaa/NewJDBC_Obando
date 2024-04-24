@@ -37,12 +37,14 @@ public class RegisterController {
             PreparedStatement statement = c.prepareStatement(
                     "INSERT INTO tblusers (name,username,password) VALUES (?,?,?)"
             )){
+            c.setAutoCommit(false);
             statement.setString(1,name);
             statement.setString(2,username);
             statement.setString(3,password);
             int rowsInserted = statement.executeUpdate();
             System.out.println("Rows inserted: "+rowsInserted);
             hc.ReadData(username,password);
+            c.commit();
         } catch (SQLException e) {
             e.printStackTrace();
         }
